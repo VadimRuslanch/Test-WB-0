@@ -1,0 +1,180 @@
+/* ====================================================================================== */
+/* ======================================GLOBAL========================================== */
+/* ====================================================================================== */
+
+
+
+/* ====================================================================================== */
+/* ======================================HEADER========================================== */
+/* ====================================================================================== */
+
+
+/* ==================================================================================== */
+/* ======================================MAIN========================================== */
+/* ==================================================================================== */
+
+
+/* Footer */
+
+
+/* Other */
+
+label.invalid input.shake, 
+label.invalid input.shake ~ span{
+    animation: shake .35s
+}
+    
+@keyframes shake{
+    25%{transform:translate(6px)}
+    50%{transform:translate(-6px)}
+    75%{transform:translate(6px)}
+}
+
+.payment-dialog form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.payment-dialog .payment-dialog__header {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-dialog .payment-dialog__close img {
+    display: block;
+}
+
+.payment-dialog label {
+    display: flex;
+    gap: 8px;
+}
+
+.payment-dialog label:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.payment-dialog__inputs {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.payment-dialog .button-primary {
+    width: max-content;
+
+}
+
+.delivery-dialog {
+    width: 450px;
+    height: 500px;
+}
+
+.delivery-dialog__tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 26px;
+}
+
+.delivery-dialog__tab {
+    flex: 1;
+    border-radius: 20px;
+    border: 2px solid rgba(203, 17, 171, 0.15);
+    background: var(--text-white, #FFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 0 11px 0;
+    transition: border 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.delivery-dialog__tab.active {
+    border: 2px solid #CB11AB;
+}
+
+.delivery-dialog__tab input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.delivery-dialog__form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.delivery-dialog__form h6 {
+    margin-bottom: 8px;
+}
+
+.delivery-dialog__form .button-primary {
+    width: max-content;
+}
+
+.delivery-dialog-addresses {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.delivery-dialog-addresses.hidden {
+    display: none;
+}
+
+.delivery-dialog-addresses .delivery__delete img {
+    filter: invert(67%) sepia(6%) saturate(136%) hue-rotate(202deg) brightness(96%) contrast(89%);
+}
+
+.delivery-dialog-addresses .delivery__delete:hover img,
+.delivery-dialog-addresses .delivery__delete:focus-visible img {
+    filter: invert(37%) sepia(34%) saturate(3405%) hue-rotate(348deg) brightness(99%) contrast(95%);
+}
+
+.delivery-dialog__address {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.delivery-dialog__address-description {
+    margin-left: 16px;
+    position: relative;
+    color: var(--system-gray);
+}
+
+.delivery-dialog__address-description .rating {
+    color: initial;
+}
+
+.delivery-dialog__address-description .rating::before {
+    content: url(../assets/icons/star.svg);
+    position: absolute;
+    top: 2px;
+    left: -16px;
+}
+
+.delivery-dialog__address .checkmark-radio {
+    top: 0;
+    transform: translateY(10%);
+}
+
+.delivery-dialog__address:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+@media(max-width:560px) {
+    .delivery-dialog {
+        width: auto;
+        height: auto;
+    }
+
+    .delivery-dialog__form .button-primary {
+        width: 100%;
+    }
+
+    .payment-dialog .button-primary {
+        width: 100%;
+    }
+}
